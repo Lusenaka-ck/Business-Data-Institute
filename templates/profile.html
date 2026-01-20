@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Profile</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+            background: #f4f6f9;
+            background: linear-gradient(to top, rgba(0,0,0,0.8) 50%, rgba(0,0,0,0.8) 50%);
+        }
+        .main {
+        width: 100%;
+        min-height: 100vh;
+        background: linear-gradient(to top, rgba(0,0,0,0.8) 50%, rgba(0,0,0,0.8) 50%);
+        background-position: center;
+        background-size: cover;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #0b1c2d;
+            padding: 15px 30px;
+            color: #ffffff;
+            font-size: 18px;
+            font-weight: 600;
+        }
+        .menu ul {
+            list-style: none;
+            display: flex;
+            gap: 18px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu a {
+            color: #fff;
+            text-decoration: none;
+            border: 1px solid #04632d;
+            border-radius: 8px;
+            padding: 8px 10px;
+        }
+
+        .menu a:hover {
+            color: #04632d;
+        }
+        .container { max-width: 700px; margin: auto; background: #fff; padding: 25px; border-radius: 8px; box-shadow: 0 8px 20px rgba(0,0,0,0.08); }
+        .row { margin-bottom: 15px; }
+        .label { font-weight: bold; color: #2c3e50; }
+        .value { color: #34495e; }
+    </style>
+</head>
+<body>
+ 
+        <div class="main">
+<div class="header">
+    Business Data Institute
+    <div class="menu"> <ul>  
+            <li><a href="/dashboard">Dashboard</a></li>
+            <li><a href="/payments">Payments</a></li>
+            <li><a href="/pastpapers">Pastpapers</a></li>
+            <li><a href="/videos">Videos</a></li>
+            <li><a href="/classes">Classes</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul></div>
+</div>
+
+<div class="container">
+    <h2>Profile</h2>
+
+    <div class="row">
+        <span class="label">Name:</span>
+        <span class="value">{{ user.first_name }} {{ user.last_name }}</span>
+    </div>
+
+    <div class="row">
+        <span class="label">Email:</span>
+        <span class="value">{{ user.email }}</span>
+    </div>
+
+    <div class="row">
+        <span class="label">Phone:</span>
+        <span class="value">{{ user.phone }}</span>
+    </div>
+
+    <div class="row">
+        <span class="label">Plan:</span>
+        <span class="value">{{ user.plan }}</span>
+    </div>
+
+    <div class="row">
+        <span class="label">Amount:</span>
+        <span class="value">{{ user.amount }}</span>
+    </div>
+
+    <div class="row">
+        <span class="label">Balance:</span>
+        <span class="value">{{ user.balance }}</span>
+    </div>
+</div>
+
+
+
+</div>
+</body>
+</html>

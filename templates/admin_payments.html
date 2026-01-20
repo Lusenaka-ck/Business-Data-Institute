@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Payments</title>
+    <style>
+         body {
+            margin: 0;
+            padding: 0;
+            font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+            background: #f4f6f9;
+            background: linear-gradient(to top, rgba(0,0,0,0.8) 50%, rgba(0,0,0,0.8) 50%);
+        }
+        .main {
+        width: 100%;
+        min-height: 100vh;
+        background: linear-gradient(to top, rgba(0,0,0,0.8) 50%, rgba(0,0,0,0.8) 50%);
+        background-position: center;
+        background-size: cover;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #0b1c2d;
+            padding: 15px 30px;
+            color: #ffffff;
+            font-size: 18px;
+            font-weight: 600;
+        }
+        .menu ul {
+            list-style: none;
+            display: flex;
+            gap: 18px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu a {
+            color: #fff;
+            text-decoration: none;
+            border: 1px solid #04632d;
+            border-radius: 8px;
+            padding: 8px 10px;
+        }
+
+        .menu a:hover {
+            color: #04632d;
+        } 
+        table { width: 100%; border-collapse: collapse; background: #fff; }
+        th, td { padding: 12px; border-bottom: 1px solid #ddd; }
+        th { background: #2c3e50; color: #fff; }
+        a { padding: 6px 12px; border-radius: 4px; text-decoration: none; color: #fff; }
+        .approve { background: #27ae60; }
+        .disapprove { background: #c0392b; }
+    </style>
+</head>
+<body>
+<div class="main">
+<div class="header">
+    Business Data Institute
+    <div class="menu"> <ul>  
+            <li><a href="/admin_dashboard">Dashboard</a></li>
+            <li><a href="/admin_payments">Payments</a></li>
+            <li><a href="/admin_users">Users</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul></div>
+</div>
+<h2>Payments Approval</h2>
+
+<table>
+<tr>
+    <th>User</th>
+    <th>Amount</th>
+    <th>Reference</th>
+    <th>Status</th>
+    <th>Action</th>
+</tr>
+
+{% for p in payments %}
+<tr>
+    <td>{{ p.email }}</td>
+    <td>{{ p.amount }}</td>
+    <td>{{ p.reference }}</td>
+    <td>{{ p.status }}</td>
+    <td>
+        {% if p.status != 'approved' %}
+            <a class="approve" href="/admin_payments/approve/{{ p.id }}">Approve</a>
+        {% endif %}
+        <a class="disapprove" href="/admin_payments/disapprove/{{ p.id }}">Disapprove</a>
+    </td>
+</tr>
+{% endfor %}
+</table>
+
+
+
+
+
+
+
+</div>
+
+</body>
+</html>

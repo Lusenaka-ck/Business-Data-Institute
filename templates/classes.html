@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Classes | Business Data Institute</title>
+
+    <!-- Inline Styling -->
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to top, rgba(0,0,0,0.8)50%,rgba(0,0,0,0.8)50%);
+        }
+               .main {
+        width: 100%;
+        min-height: 100vh;
+        background: linear-gradient(to top, rgba(0,0,0,0.9) 50%, rgba(0,0,0,0.9) 50%);
+        background-position: center;
+        background-size: cover;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #0b1c2d;
+            padding: 15px 30px;
+            color: #ffffff;
+            font-size: 18px;
+            font-weight: 600;
+        }
+        .menu ul {
+            list-style: none;
+            display: flex;
+            gap: 18px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu a {
+            color: #fff;
+            text-decoration: none;
+            border: 1px solid #04632d;
+            border-radius: 8px;
+            padding: 8px 10px;
+        }
+
+        .menu a:hover {
+            color: #04632d;
+        }      
+         /* --- Buttons --- */
+        .btn {
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: #036677;
+            color: white;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #ff7200;
+            color: #0b1c2d;
+        }
+        /* Center the title block */
+        .section-wrapper {
+            width: 100%;
+            text-align: center;
+        }
+                /* Section Titles */
+        h2.section-title {
+            text-align: center;
+            margin: 40px 0 20px 0;
+            font-size: 24px;
+            color: #036677;
+            border-bottom: 2px solid #04632d;
+            display: inline-block; /* keeps underline tight to text */
+            padding-bottom: 5px;
+            width: auto;
+        }
+        .grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+             background: transparent;             
+            align-items: center;
+            height: auto;
+        }
+        .grida {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin: 0 auto;
+            width: 1000px;
+            }
+            .grid1 {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            justify-content: center;
+            }
+
+
+
+        .container {
+            background: transparent;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            text-align: center;
+            width: 200px;
+            flex-shrink: 0;
+            color: #04632d;
+            border: 1px solid #04632d;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .timetable {
+            background: linear-gradient(to top, rgba(0,0,0,0.8) 50%, rgba(0,0,0,0.8) 50%);
+            color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            width: 500px;
+            box-sizing: border-box;
+            /* REMOVE absolute positioning */
+            position: static;
+        }
+
+        .timetable table { width: 100%; border-collapse: collapse; margin-bottom: 15px; }
+        .timetable th, .timetable td { border: 1px solid #04632d; padding: 10px; text-align: center; }
+        .timetable th { background: linear-gradient(to top, rgba(0,0,0,0.8)50%,rgba(0,0,0,0.8)50%);color: #036677; }
+        .timetable h3 { margin-top: 0; color: #036677; text-align: center;}
+
+
+        footer {
+            background: linear-gradient(to top, rgba(0,0,0,0.8)50%,rgba(0,0,0,0.8)50%);
+            color: #036677;
+            text-align: center;
+            padding: 15px 0;
+            font-size: 14px;
+            margin-top: auto;
+        }
+   
+    </style></head>
+
+<!-- Page content -->
+<body>
+    <div class="main">
+<div class="header">
+    Business Data Institute
+    <div class="menu"> <ul>  
+            <li><a href="/dashboard">Dashboard</a></li>
+            <li><a href="/payments">Payments</a></li>
+            <li><a href="/pastpapers">Pastpapers</a></li>
+            <li><a href="/videos">Videos</a></li>
+            <li><a href="/classes">Classes</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul></div>
+</div>
+<div class="grid1">
+    <div class="container">
+        <h1>Online Classes</h1>
+        <a href="#" class="btn">Zoom link</a>
+    </div>
+
+    <div class="timetable">
+        <h3>TIMETABLE</h3>
+        <table>
+            <tr>
+                <th>DAY</th>
+                <th>TIME (Kenyan)</th>
+            </tr>
+            <tr>
+                <td>Monday</td>
+                <td>6:00 PM – 8:00 PM</td>
+            </tr>
+            <tr>
+                <td>Wednesday</td>
+                <td>6:00 PM – 8:00 PM</td>
+            </tr>
+            <tr>
+                <td>Friday</td>
+                <td>6:00 PM – 8:00 PM</td>
+            </tr>
+        </table>
+    </div>
+
+
+
+        
+
+
+    </div>
+    <div class="section-wrapper">
+        <h2 class="section-title">Theoretical BDA</h2>
+    </div>
+    <div class="grid">
+        <div class="container">
+            <h1>Introduction to Excel</h1>
+            <a href="#" class="btn">Class file</a>
+           <a href="#" class="btn">Class video</a>
+           </div>
+           
+           <div class="container">
+            <h1>Intro to Data Analytics</h1>
+            <a href="#" class="btn">Class file</a>
+           <a href="#" class="btn">Class video</a>
+           </div>
+
+           <div class="container">
+            <h1>Emerging issues</h1>
+            <a href="#" class="btn">Class file</a>
+           <a href="#" class="btn">Class video</a>
+           </div>
+        
+    </div>
+    
+    <div class="section-wrapper">
+        <h2 class="section-title">Core application of data analytics</h2>
+    </div>
+    <div class="grid">
+        <div class="container">
+            <h1>Financial Reporting</h1>
+            <a href="#" class="btn">Class file</a>
+           <a href="#" class="btn">Class video</a>
+           </div>
+           
+           <div class="container">
+            <h1>Financial Management</h1>
+            <a href="#" class="btn">Class file</a>
+           <a href="#" class="btn">Class video</a>
+           </div>
+
+           <div class="container">
+            <h1>Management Accounting</h1>
+            <a href="#" class="btn">Class file</a>
+           <a href="#" class="btn">Class video</a>
+           </div>
+           <div class="section-wrapper">
+        <h2 class="section-title">Application of data analytics in specialised areas</h2>
+    </div>
+    <div class="grida">
+        <div class="container">
+            <h1>Auditing</h1>
+            <a href="#" class="btn">Class file</a>
+           <a href="#" class="btn">Class video</a>
+           </div>
+           
+           <div class="container">
+            <h1>P.F & Tax</h1>
+            <a href="#" class="btn">Class file</a>
+           <a href="#" class="btn">Class video</a>
+           </div>
+
+        
+    </div>
+    
+
+
+
+<footer>
+           &copy; Business Data Institute   | KASNEB-exam-Oriented Training
+        </footer>
+    </div>
+
+</body>
+
+</html>
+ 

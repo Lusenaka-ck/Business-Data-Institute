@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plans @ Business Data Institute</title>
+    <style>
+        * {
+box-sizing: border-box;
+}
+                body {
+        margin: 0;
+        padding: 0;
+        font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+        background: #f4f6f9;
+        background: linear-gradient(to top, rgba(0,0,0,0.8) 50%, rgba(0,0,0,0.8) 50%);
+       }
+        .main {
+        width: 100%;
+        min-height: 100vh;
+        background: linear-gradient(to top, rgba(0,0,0,0.8) 50%, rgba(0,0,0,0.8) 50%);
+        background-position: center;
+        background-size: cover;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #0b1c2d;
+            padding: 15px 30px;
+            color: #ffffff;
+            font-size: 18px;
+            flex-wrap: wrap;
+            width: auto;
+        }
+        .menu ul {
+            list-style: none;
+            display: flex;
+            gap: 18px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu a {
+            color: #fff;
+            text-decoration: none;
+            border: 1px solid #04632d;
+            border-radius: 8px;
+            padding: 8px 10px;
+        }
+
+        .menu a:hover {
+            color: #04632d;
+        }
+        /* Plans Container */
+.plcontainer {
+display: flex;
+justify-content: center;
+width: 100%;
+gap: 15px;
+padding: 20px;
+flex-wrap: wrap;
+border: 1px solid #04632d;
+color: #ffffff;
+}
+.plcontainer h2 {
+text-align: center;
+margin-bottom: 20px;
+}
+.plcard {
+width: 300px;
+margin: 60px auto;
+background: rgba(11, 28, 45, 0.8);
+padding: 20px;
+border-radius: 8px;
+height: auto;
+justify-content: space-between;
+}
+
+.plcard h2 {
+text-align: center;
+margin-bottom: 15px;
+color: #036677;
+}
+
+.plcard ul {
+list-style: none;
+padding: 0;
+margin: 0;
+}
+
+.plcard ul li {
+padding: 8px 0;
+font-size: 14px;
+}
+.btn {
+display: inline-block;
+text-decoration: none;
+padding: 10px 22px;
+border-radius: 6px;
+font-weight: bold;
+color: #ffffff;
+cursor: pointer;
+text-align: center;
+border: 1px solid #04632d;
+transition: 0.4s ease;
+margin-top: 10px;
+}
+.btn:hover {
+            background: #04632d;
+        }
+
+/* Timetable */
+.timetable {
+width: 400px;
+margin: 60px auto;
+background: rgba(11, 28, 45, 0.8);
+padding: 20px;
+border-radius: 8px;
+height: auto;
+justify-content: space-between;
+}
+
+.timetable table {
+width: 100%;
+border-collapse: collapse;
+margin-bottom: 15px;
+}
+
+.timetable th,
+.timetable td {
+border: 1px solid #04632d;
+padding: 10px;
+text-align: center;
+}
+
+.timetable th {
+background: rgba(0,0,0,0.7);
+color: #036677;
+}
+
+.timetable h3 {
+margin-top: 0;
+color: #036677;
+text-align: center;
+}
+    </style>
+<body>
+    <div class="main">
+<div class="header">
+    Business Data Institute
+    <div class="menu"> <ul>  
+            <li><a href="/register">Register</a></li>
+            <li><a href="/login">Log in</a></li>
+            <li><a href="/plans">View Plans</a></li>
+        </ul></div>
+</div>
+
+        <div class="plcontainer">
+             <h2 style="color:#036677; text-align: center; width: 100%; margin-bottom: 10px;"><a href="/">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Business Data Institute Logo"
+                style="height:150px; width:auto;">
+            </a></h2>
+
+            <div class="plcard">
+                <h2>Standard<br> Ksh 5,000/=</h2>
+                <ul>
+                    <li>1. Study notes</li>
+                    <li>2. Past papers</li>
+                    <li>3. Revision videos</li>
+                    <li>4. Block Revision (2 weeks to exam)</li>
+                    <li>5. Exam predictions (1 week to exam)</li>
+                    
+                </ul>
+            </div>
+
+            <div class="plcard">
+                <h2>Premium<br> Ksh 7,500/=</h2>
+                <ul>
+                    <li>1. Study notes</li>
+                    <li>2. Past papers</li>
+                    <li>3. Revision videos</li>
+                    <li>4. Block Revision (2 weeks to exam)</li>
+                    <li>5. Exam predictions (1 week to exam)</li>
+                    <li>6. Live Zoom classes</li>
+                    
+                </ul>
+            </div>
+            <div class="timetable">
+            <h3>ZOOM CLASS TIMETABLE</h3>
+            <table>
+                <tr><th>DAY</th><th>TIME(Kenyan)</th></tr>
+                <tr><td>Monday</td><td>6:00 PM – 8:00 PM</td></tr>
+                <tr><td>Wednesday</td><td>6:00 PM – 8:00 PM</td></tr>
+                <tr><td>Friday</td><td>6:00 PM – 8:00 PM</td></tr>
+            </table>
+            <a href="{{ url_for('register') }}" class="btn">Register</a>
+            <a href="{{ url_for('login') }}" class="btn">Log in</a>
+            <a href="https://drive.google.com/file/d/1aoJTVriqU6jz0qHtiDL3lQxSr1ljQmnD/view?usp=sharing" class="btn">Download Syllabus</a>
+        </div>
+
+</div>
+
+
+
+         <footer>
+            &copy; Business Data Institute | KASNEB-exam-Oriented Training
+         </footer>
+    </div>
+</body>
+</html>

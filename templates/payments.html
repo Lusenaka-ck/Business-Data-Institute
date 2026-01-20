@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Make Payment</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+            background: #f4f6f9;
+            background: linear-gradient(to top, rgba(0,0,0,0.8) 50%, rgba(0,0,0,0.8) 50%);
+        }
+        .main {
+        width: 100%;
+        min-height: 100vh;
+        background: linear-gradient(to top, rgba(0,0,0,0.8) 50%, rgba(0,0,0,0.8) 50%);
+        background-position: center;
+        background-size: cover;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #0b1c2d;
+            padding: 15px 30px;
+            color: #ffffff;
+            font-size: 18px;
+            font-weight: 600;
+        }
+        .menu ul {
+            list-style: none;
+            display: flex;
+            gap: 18px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu a {
+            color: #036677;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .menu a:hover {
+            color: #ff7200;
+        } 
+        .container { max-width: 700px; margin: auto; background: #fff; padding: 25px; border-radius: 8px; box-shadow: 0 8px 20px rgba(0,0,0,0.08); }
+        input, select { width: 100%; padding: 10px; margin: 10px 0; border-radius: 4px; border: 1px solid #ccc; }
+        button { padding: 10px 15px; background: #1abc9c; color: #fff; border: none; border-radius: 4px; cursor: pointer; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border-bottom: 1px solid #ddd; padding: 10px; }
+        th { background: #2c3e50; color: #fff; }
+                .flash-success { color: green;
+        text-align: center; }
+        .flash-danger { color: red; 
+        text-align: center;}
+    </style>
+</head>
+<body>
+<div class="header">
+    Business Data Institute
+    <div class="menu"> <ul>  
+            <li><a href="/dashboard">Dashboard</a></li>
+            <li><a href="/payment">Payments</a></li>
+            <li><a href="/pastpapers">Pastpapers</a></li>
+            <li><a href="/videos">Videos</a></li>
+            <li><a href="/classes">Classes</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul></div>
+</div>
+
+
+<div class="container">
+    <h2>Make Payment</h2>
+     {% with messages = get_flashed_messages(with_categories=true) %}
+      {% for category, message in messages %}
+        <div class="flash-{{ category }}">{{ message }}</div>
+      {% endfor %}
+    {% endwith %}
+
+    <p><strong>Balance:</strong> {{ user.balance }}</p>
+
+    <form method="POST">
+        <label>Amount</label>
+        <input type="number" name="amount" required min="1">
+
+        <label>Reference</label>
+        <input type="text" name="reference" required>
+
+        <button type="submit">Submit Payment</button>
+    </form>
+
+    <h3>Your Payments</h3>
+    <table>
+        <tr>
+            <th>Amount</th>
+            <th>Reference</th>
+            <th>Status</th>
+            <th>Date</th>
+        </tr>
+        {% for p in payments %}
+        <tr>
+            <td>{{ p.amount }}</td>
+            <td>{{ p.reference }}</td>
+            <td>{{ p.status }}</td>
+            <td>{{ p.created_at }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+</body>
+</html>
